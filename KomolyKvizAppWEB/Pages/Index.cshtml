@@ -1,0 +1,30 @@
+﻿@page
+
+@model KomolyKvizAppWEB.Pages.IndexModel
+@{
+    <table>
+    <thead style="background-color:aqua;">
+        <td>Kérdés</td>
+        <td>Igaz/Hamis</td>
+        <td>Témakör</td>
+        <td>Pontszám</td>
+    </thead>
+        @foreach(var i in Model.kerdesek)
+        {
+            <tr>
+                <td>@i.KerdesSzoveg</td>
+                @if (i.HelyesValasz == true)
+                {
+                 <td style="background-color:green;">Igaz</td>    
+                }
+                else
+                { 
+                 <td style="background-color:red;">Hamis</td>
+                }
+             
+                <td>@i.Temakor</td>
+                <td>@i.Pont</td>
+            </tr>
+        }
+    </table>
+}

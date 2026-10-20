@@ -1,0 +1,22 @@
+﻿@page
+@model KomolyKvizAppWEB.Pages.IgazHamisBekeresModel
+@{
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <label for="KerdesSzoveg">Kérdés szövege:</label>
+        <input type="text" name="KerdesSzoveg" required />
+
+        <label for="HelyesValasz">Igaz/Hamis</label>
+        <input type="checkbox" name="HelyesValasz" value="true" />
+
+    <label for="temakor">Témakör:</label>
+    <input type="text" name="temakor" required />
+
+    <label for="pont">Pontszám:</label>
+    <input type="number" name="pont" required />
+
+        <button type="submit">Mentés</button>
+    </form>
+
+
+}

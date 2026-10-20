@@ -1,0 +1,57 @@
+﻿@page
+@model KomolyKvizAppWEB.Pages.FeleletValasztosModel
+@{
+    <table>
+        <thead style="background-color:blueviolet;">
+            <td>Kérdés</td>
+            <td>Válasz1</td>
+            <td>Válasz2</td>
+            <td>Válasz3</td>
+            <td>Válasz4</td>
+            <td>Téma</td>
+            <td>Pontszám</td>
+        </thead>
+        @foreach(var i in Model.kerdesek)
+        {
+            <tr>
+                <td>@i.KerdesSzoveg</td>
+                @if (i.HelyesValasz == 0)
+                {
+                    <td style="background-color:green;">@i.V1</td>
+                    <td>@i.V2</td>
+                    <td>@i.V3</td>
+                    <td>@i.V4</td>
+                }
+                else if (i.HelyesValasz == 1)
+                {
+                    <td>@i.V1</td>
+                    <td style="background-color:green;">@i.V2</td>
+                    <td>@i.V3</td>
+                    <td>@i.V4</td>
+                }
+                else if (i.HelyesValasz == 2)
+                {
+                    <td>@i.V1</td>
+                    <td>@i.V2</td>
+                    <td style="background-color:green;">@i.V3</td>
+                    <td>@i.V4</td>
+                }
+                else 
+                {
+                    <td>@i.V1</td>
+                    <td>@i.V2</td>
+                    <td>@i.V3</td>
+                    <td style="background-color:green;">@i.V4</td>
+                }
+                <td>@i.Temakor</td>
+                <td>@i.Pontszam</td>
+            </tr>
+        }
+
+    
+
+    
+    </table>
+
+
+}
